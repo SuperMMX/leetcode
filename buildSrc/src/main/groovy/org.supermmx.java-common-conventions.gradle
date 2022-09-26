@@ -1,0 +1,35 @@
+plugins {
+    id 'java'
+    id 'groovy'
+}
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+dependencies {
+    constraints {
+        implementation "org.apache.groovy:groovy-all:${groovy_version}"
+    }
+
+    implementation 'org.apache.groovy:groovy-all'
+    implementation "org.slf4j:slf4j-api:${slf4j_version}"
+
+    // lombok
+    compileOnly "org.projectlombok:lombok:${lombok_version}"
+    annotationProcessor "org.projectlombok:lombok:${lombok_version}"
+
+    // test
+    testImplementation "org.spockframework:spock-core:${spock_version}"
+
+    // runtime
+    runtimeOnly "ch.qos.logback:logback-classic:${logback_version}"
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+
+    systemProperties System.properties
+    testLogging.showStandardStreams = true
+}

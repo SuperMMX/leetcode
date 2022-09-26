@@ -1,0 +1,10 @@
+plugins {
+    id 'org.supermmx.java-application-conventions'
+}
+
+dependencies {
+}
+
+application {
+    mainClass = 'org.supermmx.Main'
+}
