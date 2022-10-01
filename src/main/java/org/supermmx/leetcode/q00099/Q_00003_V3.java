@@ -63,8 +63,8 @@ public class Q_00003_V3 extends Q_00003_Solution {
             log.debug("==== [ {}, {} ], Index: {}, char: {}, Last Index: {}",
                      start, end - 1, end, nextChar, charPos);
 
-            // got a dup, the current sliding window is ended
-            if (charPos >= 0) {
+            // got a dup inside the sliding window, the current sliding window is ended
+            if (charPos >= 0 && charPos >= start) {
                 // the last sliding window is larger
                 if ((end - start) > res) {
                     resStart = start;
@@ -77,11 +77,6 @@ public class Q_00003_V3 extends Q_00003_Solution {
                 // start a new sliding window
                 // starting from the char next to the repeating char position in the sliding window,
                 // ending at current char
-
-                // clear positions from start to the current char
-                for (int i = start; i <= charPos; i ++) {
-                    posArray[s.charAt(i)] = -1;
-                }
 
                 start = charPos + 1;
             }

@@ -12,6 +12,7 @@ import spock.lang.*
 class Q_00003_Spec extends Specification {
     @Shared
     List<Solution> solutions = Q_00003.getVersions()
+        //.find { it == Q_00003_V3 }
         .collect { cls -> cls.newInstance() }
 
     def 'Example 1'() {
