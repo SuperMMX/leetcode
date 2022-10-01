@@ -106,7 +106,9 @@ class Q_00003_Spec extends Specification {
 
         when:
         def results = solutions.collectEntries { solution ->
+            def startTS = System.currentTimeMillis()
             def res = solution.solve(s)
+            log.info '==== {}: {}ms', solution, (System.currentTimeMillis() - startTS)
             return [ (solution.version): res ]
         }
         log.info '==== results: {}', results
@@ -126,7 +128,9 @@ class Q_00003_Spec extends Specification {
 
             when:
             def results = solutions.collectEntries { solution ->
+                def startTS = System.currentTimeMillis()
                 def res = solution.solve(s)
+                log.info '==== {}: {}ms', solution, (System.currentTimeMillis() - startTS)
                 return [ (solution.version): res ]
             }
             log.info '==== results: {}', results

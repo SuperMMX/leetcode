@@ -22,8 +22,6 @@ public class Q_00003_V1 extends Q_00003_Solution {
             return 0;
         }
 
-        long startTime = System.currentTimeMillis();
-
         Set<Character> chars = new HashSet<>();
         int length = s.length();
 
@@ -33,14 +31,12 @@ public class Q_00003_V1 extends Q_00003_Solution {
         }
 
         int uniqueChars = chars.size();
-        log.info("==== Unique chars: {}", uniqueChars);
 
         // only one unique char: the result is 1
         // only two unique char: the result is 2
         // no dups in the whole string: the result is the length
         if (uniqueChars <= 2
             || uniqueChars == length) {
-            log.info("==== V1 Result: {}, Running {}ms", uniqueChars, (System.currentTimeMillis() - startTime));
             return uniqueChars;
         }
 
@@ -86,8 +82,7 @@ public class Q_00003_V1 extends Q_00003_Solution {
             result --;
         }
 
-        log.info("==== V1 Result: {}, [ {}, {} ], Running {}ms",
-                 result, resultStart, resultEnd, (System.currentTimeMillis() - startTime));
+        log.debug("==== V1 Result: {}, [ {}, {} ]", result, resultStart, resultEnd);
 
         return result;
     }

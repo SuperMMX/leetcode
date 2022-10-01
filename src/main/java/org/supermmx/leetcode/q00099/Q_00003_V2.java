@@ -29,8 +29,6 @@ public class Q_00003_V2 extends Q_00003_Solution {
             return 0;
         }
 
-        long startTime = System.currentTimeMillis();
-
         HashSet<Character> chars = new HashSet<>();
         int length = s.length();
 
@@ -46,7 +44,6 @@ public class Q_00003_V2 extends Q_00003_Solution {
         // no dups in the whole string: the result is the length
         if (uniqueChars <= 2
             || uniqueChars == length) {
-            log.info("==== V2 Result: {}, Running {}ms", uniqueChars, (System.currentTimeMillis() - startTime));
             return uniqueChars;
         }
 
@@ -61,7 +58,6 @@ public class Q_00003_V2 extends Q_00003_Solution {
                 windows.add(win);
             }
         }
-        log.info("==== Initializing {}ms", (System.currentTimeMillis() - startTime));
 
         // keep one
         Window_V2 window = windows.get(0);
@@ -96,8 +92,7 @@ public class Q_00003_V2 extends Q_00003_Solution {
             windows = nextWindows;
         }
 
-        log.info("==== V2 Result: {}, [ {}, {} ], Running {}ms",
-                 windowSize - 1, window.start, window.end, (System.currentTimeMillis() - startTime));
+        log.debug("==== V2 Result: {}, [ {}, {} ]", windowSize - 1, window.start, window.end);
 
         return windowSize - 1;
     }
