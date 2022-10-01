@@ -43,7 +43,8 @@ public interface Q_00003 {
      */
     public static List<Class<? extends Solution>> getVersions() {
         return Arrays.asList(Q_00003_V1.class,
-                             Q_00003_V2.class);
+                             Q_00003_V2.class,
+                             Q_00003_V3.class);
     }
 
 }
