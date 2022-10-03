@@ -19,7 +19,8 @@ public class Q_00005_V1 extends Q_00005_Solution {
             return s;
         }
 
-        int length = s.length();
+        char[] array = s.toCharArray();
+        int length = array.length;
 
         // minimum one
         int[] resHolder = { 0, 0, 1 };
@@ -30,10 +31,10 @@ public class Q_00005_V1 extends Q_00005_Solution {
             log.debug("==== cc = {}", cc);
 
             // checking single
-            checkRange(s, length, cc, true, resHolder);
+            checkRange(array, length, cc, true, resHolder);
 
             // checking double
-            checkRange(s, length, cc, false, resHolder);
+            checkRange(array, length, cc, false, resHolder);
 
             // advance next as the center char
             cc ++;
@@ -47,7 +48,7 @@ public class Q_00005_V1 extends Q_00005_Solution {
         return res;
     }
 
-    private void checkRange(String s, int length,
+    private void checkRange(char[] array, int length,
                             int cc, boolean isSingle,
                             int[] resHolder) {
         // single
@@ -64,7 +65,7 @@ public class Q_00005_V1 extends Q_00005_Solution {
         // extend to both ends
         while (start >= 0 && end < length) {
             // not the same char
-            if (s.charAt(start) != s.charAt(end)) {
+            if (array[start] != array[end]) {
                 break;
             }
 

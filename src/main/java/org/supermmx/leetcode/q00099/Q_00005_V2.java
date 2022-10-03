@@ -21,7 +21,8 @@ public class Q_00005_V2 extends Q_00005_Solution {
             return s;
         }
 
-        int length = s.length();
+        char[] array = s.toCharArray();
+        int length = array.length;
 
         // store the result for the last two range sizes
         // whether the string is a palindrome
@@ -50,7 +51,7 @@ public class Q_00005_V2 extends Q_00005_Solution {
 
                 boolean isPal =
                     // start char is the same as the end char
-                    (s.charAt(start) == s.charAt(end)
+                    (array[start] == array[end]
                      // either only two chars
                      && ((size == 2)
                          // or the inner string is a palindrome
