@@ -42,7 +42,8 @@ public interface Q_00005 {
      * To get all the versions
      */
     public static List<Class<? extends Solution>> getVersions() {
-        return Arrays.asList(Q_00005_V1.class);
+        return Arrays.asList(Q_00005_V1.class,
+                             Q_00005_V2.class);
     }
 
 }

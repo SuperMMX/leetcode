@@ -12,7 +12,7 @@ import spock.lang.*
 class Q_00005_Spec extends Specification {
     @Shared
     List<Solution> solutions = Q_00005.getVersions()
-        .find { it == Q_00005_V1 }
+        //.find { it == Q_00005_V2 }
         .collect { cls -> cls.newInstance() }
 
     def 'Example 1'() {
@@ -37,12 +37,23 @@ class Q_00005_Spec extends Specification {
         solution << solutions
     }
 
-    def 'Initial wrong answer'() {
+    def 'single center in the latter half'() {
         when:
         def res = solution.solve("caba")
 
         then:
         res == "aba"
+
+        where:
+        solution << solutions
+    }
+
+    def 'double center in the latter half'() {
+        when:
+        def res = solution.solve("cdabba")
+
+        then:
+        res == "abba"
 
         where:
         solution << solutions
