@@ -18,6 +18,10 @@ public abstract class Solution {
     protected String name;
     /** The solution description */
     protected String description;
+    /** Time complexity */
+    protected String time;
+    /** Space complexity */
+    protected String space;
     /** Some comment */
     protected String comment;
 
