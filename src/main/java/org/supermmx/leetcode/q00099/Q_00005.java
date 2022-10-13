@@ -35,7 +35,7 @@ public interface Q_00005 {
             .description("Given a string s, return the longest palindromic substring in s.")
             .link("https://leetcode.com/problems/longest-palindromic-substring/")
             .difficulty(Difficulty.MEDIUM)
-            .tags(Arrays.asList(STRING, DYNAIC_PROGRAMMING))
+            .tags(Arrays.asList(STRING, DYNAMIC_PROGRAMMING))
             .build();
 
     /**
