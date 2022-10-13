@@ -8,8 +8,8 @@ import lombok.extern.slf4j.Slf4j;
 public class Q_00007_V1 extends Q_00007_Solution {
     public Q_00007_V1() {
         version = 1;
-        name = "Normal mod and times";
-        description = "";
+        name = "Check Tenth";
+        description = "Check against MAX_VALUE / 10 or MIN_VALUE / 10 and the remainder";
         time = "";
         space = "";
         comment = "";
