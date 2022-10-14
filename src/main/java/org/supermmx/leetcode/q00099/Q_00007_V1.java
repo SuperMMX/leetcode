@@ -10,8 +10,8 @@ public class Q_00007_V1 extends Q_00007_Solution {
         version = 1;
         name = "Check Tenth";
         description = "Check against MAX_VALUE / 10 or MIN_VALUE / 10 and the remainder";
-        time = "";
-        space = "";
+        timeO = "";
+        spaceO = "";
         comment = "";
     }
 
