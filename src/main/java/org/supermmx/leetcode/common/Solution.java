@@ -19,9 +19,17 @@ public abstract class Solution {
     /** The solution description */
     protected String description;
     /** Time complexity */
-    protected String time;
+    protected String timeO;
     /** Space complexity */
-    protected String space;
+    protected String spaceO;
+    /** Time executed in ms in LeetCode */
+    protected int execTime;
+    /** Time executed percentage */
+    protected double execTimePercentage;
+    /** Memory used in MB in LeetCode */
+    protected double execMemory;
+    /** Memory used percentage */
+    protected double execMemoryPercentage;
     /** Some comment */
     protected String comment;
 
